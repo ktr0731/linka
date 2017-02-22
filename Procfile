@@ -1,1 +1,1 @@
-web: gc-slack-bot
+web: linka
