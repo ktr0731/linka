@@ -1,5 +1,5 @@
 {
-	"ImportPath": "github.com/lycoris0731/gc-slack",
+	"ImportPath": "github.com/lycoris0731/linka",
 	"GoVersion": "go1.7",
 	"GodepVersion": "v77",
 	"Deps": [
