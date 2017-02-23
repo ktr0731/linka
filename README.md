@@ -1,4 +1,5 @@
 # Linka
+![](./linka.jpg)
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)  
 My Slack bot for notifying summary of result in Groove Coaster 3.  
 
