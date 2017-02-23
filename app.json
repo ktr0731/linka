@@ -1,0 +1,25 @@
+{
+  "name": "Linka",
+  "description": "A Slack bot for notifying summary of result in Groove Coaster 3.",
+  "keywords": [
+    "groovecoaster"
+  ],
+  "website": "https://github.com/lycoris0731/linka",
+  "repository": "https://github.com/lycoris0731/linka",
+  "env": {
+    "SLACK_TOKEN": {
+      "description": "A Slack token for Linka"
+    },
+    "URL": {
+     "description": "Groove Coaster Summary Server URL"
+    }
+  },
+  "addons": [
+    "redistogo:nano"
+  ],
+  "buildpacks": [
+    {
+      "url": "heroku/go"
+    }
+  ]
+}
