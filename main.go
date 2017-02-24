@@ -45,7 +45,7 @@ func run(api *slack.Client) int {
 
 func response(msg slack.Msg) (string, error) {
 	client := redis.NewClient(&redis.Options{
-		Addr: "localhost" + os.Getenv("REDIS_URL"),
+		Addr: os.Getenv("REDISTOGO_URL"),
 	})
 	defer client.Close()
 
