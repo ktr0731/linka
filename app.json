@@ -9,9 +9,6 @@
   "env": {
     "SLACK_TOKEN": {
       "description": "A Slack token for Linka"
-    },
-    "URL": {
-     "description": "Groove Coaster Summary Server URL"
     }
   },
   "addons": [
