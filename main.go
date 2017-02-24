@@ -8,8 +8,7 @@ import (
 	"os"
 	"strings"
 
-	"gopkg.in/redis.v5"
-
+	"github.com/garyburd/redigo/redis"
 	"github.com/nlopes/slack"
 )
 
@@ -44,10 +43,11 @@ func run(api *slack.Client) int {
 }
 
 func response(msg slack.Msg) (string, error) {
-	client := redis.NewClient(&redis.Options{
-		Addr: os.Getenv("REDISTOGO_URL"),
-	})
-	defer client.Close()
+	c, err := redis.DialURL(os.Getenv("REDISTOGO_URL"))
+	if err != nil {
+		return "", err
+	}
+	defer c.Close()
 
 	words := strings.Split(msg.Text, " ")[1:]
 
@@ -57,8 +57,8 @@ func response(msg slack.Msg) (string, error) {
 
 	switch words[0] {
 	case "get":
-		url, err := client.Get(msg.User).Result()
-		if err == redis.Nil {
+		url, err := redis.String(c.Do("GET", msg.User))
+		if err == redis.ErrNil {
 			return "", errors.New("registered user's url not found")
 		} else if err != nil {
 			return "", err
@@ -70,14 +70,14 @@ func response(msg slack.Msg) (string, error) {
 		}
 		url := words[1]
 		url = url[1 : len(url)-1]
-		err := client.Set(msg.User, url, 0).Err()
+		_, err := c.Do("SET", msg.User, url)
 		if err != nil {
 			return "", err
 		}
 		return ":dizzy: URL - " + url, nil
 	case "summary":
-		url, err := client.Get(msg.User).Result()
-		if err == redis.Nil {
+		url, err := redis.String(c.Do("GET", msg.User))
+		if err == redis.ErrNil {
 			return "", errors.New("registered user's url not found")
 		} else if err != nil {
 			return "", err

@@ -4,6 +4,16 @@
 	"GodepVersion": "v77",
 	"Deps": [
 		{
+			"ImportPath": "github.com/garyburd/redigo/internal",
+			"Comment": "v1.0.0-17-g908534c",
+			"Rev": "908534c8b97586a4597e3fa195875d2d26502b97"
+		},
+		{
+			"ImportPath": "github.com/garyburd/redigo/redis",
+			"Comment": "v1.0.0-17-g908534c",
+			"Rev": "908534c8b97586a4597e3fa195875d2d26502b97"
+		},
+		{
 			"ImportPath": "github.com/nlopes/slack",
 			"Comment": "v0.0.1-176-g6519657",
 			"Rev": "6519657c021b7add19c4ef48220140cca0b1657b"
@@ -11,36 +21,6 @@
 		{
 			"ImportPath": "golang.org/x/net/websocket",
 			"Rev": "569280fa63be4e201b975e5411e30a92178f0118"
-		},
-		{
-			"ImportPath": "gopkg.in/redis.v5",
-			"Comment": "v5.2.6",
-			"Rev": "c86c141c389296f6b279ccebc75b7594a3f7f1fb"
-		},
-		{
-			"ImportPath": "gopkg.in/redis.v5/internal",
-			"Comment": "v5.2.6",
-			"Rev": "c86c141c389296f6b279ccebc75b7594a3f7f1fb"
-		},
-		{
-			"ImportPath": "gopkg.in/redis.v5/internal/consistenthash",
-			"Comment": "v5.2.6",
-			"Rev": "c86c141c389296f6b279ccebc75b7594a3f7f1fb"
-		},
-		{
-			"ImportPath": "gopkg.in/redis.v5/internal/hashtag",
-			"Comment": "v5.2.6",
-			"Rev": "c86c141c389296f6b279ccebc75b7594a3f7f1fb"
-		},
-		{
-			"ImportPath": "gopkg.in/redis.v5/internal/pool",
-			"Comment": "v5.2.6",
-			"Rev": "c86c141c389296f6b279ccebc75b7594a3f7f1fb"
-		},
-		{
-			"ImportPath": "gopkg.in/redis.v5/internal/proto",
-			"Comment": "v5.2.6",
-			"Rev": "c86c141c389296f6b279ccebc75b7594a3f7f1fb"
 		}
 	]
 }
