@@ -1,1 +1,1 @@
-web: linka
+worker: linka
